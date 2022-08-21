@@ -1,7 +1,103 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        div#bg { /* 背景样式 */
+            width: 1080px;  /* 宽 */
+            height: 2412px; /* 高 */
+            background-image: url(bg.jpg);
+        }
+
+        div#button {
+            padding-top: 110px;
+            padding-left: 780px;
+        }
+
+        div#notice {
+            display: inline-block;
+            font-size: 40px;
+            width: 800px;
+            height: 100px;
+            padding-top: 80px;
+            padding-left: 120px;
+            overflow: hidden;
+        }
+
+        p#trans {
+            animation: fadenum 5s infinite;
+        }
+
+        @keyframes fadenum{
+            0% {transform: translateX(200px);}
+            100% {transform: translateX(-200px);}
+        }
+
+        div#now {
+            font-size: 50px;
+            padding-top: 200px;
+            padding-left: 300px;
+        }
+
+        div#rotate {
+            padding-left: 540px;
+            padding-top: 230px;
+            animation: myRotate 10s linear infinite;
+        }
+
+        @keyframes myRotate{
+            0%{ -webkit-transform: rotate(0deg);}
+            50%{ -webkit-transform: rotate(180deg);}
+            100%{ -webkit-transform: rotate(360deg);}
+        }
+
+        div#last-day {
+            font-size: 30px;
+            padding-top: 555px;
+            padding-left: 150px;
+        }
+    </style>
+</head>
 <body>
-<h1>Dog Liu</h1>
-<p>Dog Liu is an asshole.</p>
+<div id="bg">
+    <div id="button">
+        <img src="button.jpg">
+    </div>
+    <div id="notice">
+        <p id="trans">根据健康码“涉疫风险自报”模块自主报告涉疫风险地区。</p>
+    </div>
+    <div id="now"></div>
+    <div id="rotate">
+        <img src="circle.jpg">
+    </div>
+    <div id="last-day"></div>
+</div>
 </body>
+<script type="text/javascript">
+    function add_0(num) {
+        if(num < 10) {
+            return "0"+num;
+        } else {
+            return num;
+        }
+    }
+    function now() {
+        var time = new Date();
+        var now_str = time.getFullYear()+"-"+(time.getMonth()+1)+"-"+time.getDate()+" "+add_0(time.getHours())+":"+add_0(time.getMinutes())+":"+add_0(time.getSeconds());
+        document.getElementById("now").innerText = now_str;
+    }
+    now();
+    setInterval("now()", 1000)
+</script>
+<script type="text/javascript">
+function last_day() {
+        var time = new Date();
+        var last_day_str = time.getFullYear()+"-"+(time.getMonth()+1)+"-"+time.getDate()+" "+"21:45:26";
+        document.getElementById("last-day").innerText = last_day_str;
+    }
+    last_day();
+</script>
 </html>
