@@ -23,7 +23,7 @@
             width: 800px;
             height: 100px;
             padding-top: 80px;
-            padding-left: 120px;
+            padding-left: 160px;
             overflow: hidden;
         }
 
@@ -67,7 +67,7 @@
         <img src="button.jpg">
     </div>
     <div id="notice">
-        <p id="trans">根据健康码“涉疫风险自报”模块自主报告涉疫风险地区。</p>
+        <p id="trans">根据健康码“涉疫风FDSFGDSAGSD险自报”模块自主报告涉疫风险地区。</p>
     </div>
     <div id="now"></div>
     <div id="rotate">
@@ -93,9 +93,9 @@
     setInterval("now()", 1000)
 </script>
 <script type="text/javascript">
-function last_day() {
+    function last_day() {
         var time = new Date();
-        var last_day_str = time.getFullYear()+"-"+(time.getMonth()+1)+"-"+time.getDate()+" "+"21:45:26";
+        var last_day_str = time.getFullYear()+"-"+(time.getMonth()+1)+"-"+(time.getDate()-1)+" "+"21:45:26";
         document.getElementById("last-day").innerText = last_day_str;
     }
     last_day();
