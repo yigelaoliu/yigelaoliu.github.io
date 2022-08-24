@@ -66,7 +66,7 @@
             font-family: Arial, Helvetica, sans-serif;
             font-size: 65px;
             padding-top: 130px;
-            padding-left: 238px;
+            padding-left: 210px;
             letter-spacing:3px
         }
 
@@ -173,7 +173,7 @@
     }
     function now() {
         var time = new Date();
-        var now_str = time.getFullYear()+"-"+(time.getMonth()+1)+"-"+time.getDate()+" "+add_0(time.getHours())+":"+add_0(time.getMinutes())+":"+add_0(time.getSeconds());
+        var now_str = time.getFullYear()+"-"+add_0(time.getMonth()+1)+"-"+add_0(time.getDate())+" "+add_0(time.getHours())+":"+add_0(time.getMinutes())+":"+add_0(time.getSeconds());
         document.getElementById("now").innerText = now_str;
     }
     now();
@@ -182,7 +182,8 @@
 <script type="text/javascript">
     function last_day() {
         var time = new Date();
-        var last_day_str = time.getFullYear()+"-"+(time.getMonth()+1)+"-"+(time.getDate()-1)+" "+"21:45:26";
+        time.setDate(time.getDate()-2);
+        var last_day_str = time.getFullYear()+"-"+add_0(time.getMonth()+1)+"-"+add_0(time.getDate())+" "+"21:45:26";
         document.getElementById("last-day").innerText = last_day_str;
     }
     last_day();
