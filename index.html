@@ -10,7 +10,7 @@
 
         div#bg { /* 背景样式 */
             width: 1080px;  /* 宽 */
-            height: 2412px; /* 高 */
+            height: 2595px; /* 高 */
             background-image: url(bg.jpg);
         }
 
@@ -98,24 +98,34 @@
             padding-left: 134px;
         }
 
+        div#xingchengma {
+            float: left;
+            /* background: #f00; */
+            opacity: 0.2;
+            width: 500px;
+            height: 300px;
+            margin-top: 350px;
+            margin-left: 0px;       
+        }
+
         div#click {
             float: left;
             /* background: #f00; */
             opacity: 0.2;
-            width: 300px;
-            height: 200px;
-            margin-top: 500px;
-            margin-left: 200px;
+            width: 500px;
+            height: 300px;
+            margin-top: 300px;
+            margin-left: 600px;
         }
 
-        div#xingcheng {
+        /* div#xingcheng {
             visibility: hidden;
             float: left;
             /* background: #0f0; */
-            opacity: 0.2;
+            /* opacity: 0.2;
             width: 300px;
             height: 200px;
-        }
+        } */ 
     </style>
 </head>
 <body>
@@ -137,10 +147,10 @@
 
     <div id="last-day"></div>
 
-    <div id="click"></div>
+    <div id="xingchengma" onclick="window.open('xingchengma.html', '_self')"></div>
+    <div id="click" onclick="window.open('hesuan.html', '_self')"></div>
 
-    <div id="xingcheng">
-        <!--添加界面-->
+    <!-- <div id="xingcheng">
         <div class="mini-panel-wa">
             <div class="mini-panel-border">
                 <div class="mini-panel-header">
@@ -161,7 +171,7 @@
                 </div>
             </div>
         </div>
-</div>
+    </div> -->
 </body>
 <script type="text/javascript">
     function add_0(num) {
@@ -182,25 +192,10 @@
 <script type="text/javascript">
     function last_day() {
         var time = new Date();
-        time.setDate(time.getDate()-2);
-        var last_day_str = time.getFullYear()+"-"+add_0(time.getMonth()+1)+"-"+add_0(time.getDate())+" "+"21:45:26";
+        time.setDate(time.getDate()-1);
+        var last_day_str = time.getFullYear()+"-"+add_0(time.getMonth()+1)+"-"+add_0(time.getDate())+" "+"23:45:26";
         document.getElementById("last-day").innerText = last_day_str;
     }
     last_day();
-</script>
-<script type="text/javascript">
-    var show = 0;
-    var click = document.getElementById("click");
-    var xingcheng = document.getElementById("xingcheng");
-
-    click.onclick = function() {
-        if(show == 0) {
-            xingcheng.style.visibility = "visible";
-            show = 1;
-        } else {
-            xingcheng.style.visibility = "hidden";
-            show = 0;
-        }  
-    };
 </script>
 </html>

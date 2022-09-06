@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        div#bg { /* 背景样式 */
+            width: 1080px;  /* 宽 */
+            height: 2335px; /* 高 */
+            background-image: url(xingchengma.jpg);
+        }
+
+        div#now {
+            font-size: 58px;
+            /* font-family:'Courier New', Courier, monospace; */
+            font-weight: bold;
+            color: #848289;
+            padding-top: 1052px;
+            padding-left: 380px;
+        }
+
+        div#xingchengma {
+            width:230px; 
+		    height:230px;
+            position:absolute;
+            /* padding-top: 100px;
+            padding-left: 300px; */
+            margin-top: 150px;
+            margin-left: 420px;
+            animation:scale 1.5s linear infinite;
+            /*名称 1s 匀速 无限循环*/
+            transform-origin: center;
+        }
+        @keyframes scale{   /*必须和animation一起用  动画帧*/
+		50%{transform:scale(2)}
+	}
+        
+    </style>
+</head>
+<body>
+    <div id="bg">
+        <div id="now"></div>
+        <div id="xingchengma">
+            <img src="jiantou.png">
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    function add_0(num) {
+        if(num < 10) {
+            return "0"+num;
+        } else {
+            return num;
+        }
+    }
+    function now() {
+        var time = new Date();
+        var now_str = time.getFullYear()+"-"+add_0(time.getMonth()+1)+"-"+add_0(time.getDate())+" "+add_0(time.getHours())+":"+add_0(time.getMinutes())+":"+add_0(time.getSeconds());
+        document.getElementById("now").innerText = now_str;
+    }
+    now();
+    // setInterval("now()", 1000)
+</script>
+</html>
