@@ -192,7 +192,7 @@
 <script type="text/javascript">
     function last_day() {
         var time = new Date();
-        time.setDate(time.getDate()-1);
+        time.setDate(time.getDate()-2);
         var last_day_str = time.getFullYear()+"-"+add_0(time.getMonth()+1)+"-"+add_0(time.getDate())+" "+"23:45:26";
         document.getElementById("last-day").innerText = last_day_str;
     }
