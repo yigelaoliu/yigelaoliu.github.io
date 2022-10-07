@@ -13,7 +13,10 @@
             height: 2595px; /* 高 */
             background-image: url(bg.jpg);
         }
-
+    #wrapper{
+        width: 100%;
+        height: 100%;
+    }
         div#button {
             padding-top: 110px;
             padding-left: 780px;
@@ -130,27 +133,30 @@
 </head>
 <body>
 <div id="bg">
-    <div id="button">
-        <img src="button.png">
-    </div>
+    </div id="wrapper">
+        <div id="button">
+             <img src="button.png">
+        </div>
     <div class="notice-box">
 
         <p class="notice-animate">
             河北省政务服务管理办公室：办理政务服务业务请登录河北政务服务网(http://www.hbzwfw.gov.cn/)或“冀时办”APP，我们将为您提供不见面审批服务。近14日内涉疫风险群众须在河北健康码“涉疫风险自报”模块自主报告涉疫风险地区旅居情况，瞒报不报者，造成疫情传播后果的，追究法律责任！
         </p>
-    
+
     </div>
-    <div id="now"></div>
-    <div id="rotate">
-        <img src="circle.png">
+        <div id="now"></div>
+        <div id="rotate">
+                <img src="circle.png">
+        </div>
+
+         <div id="last-day"></div>
+
+        <div id="xingchengma" onclick="window.open('xingchengma.html', '_self')"></div>
+        <div id="click" onclick="window.open('hesuan.html', '_self')"></div>
     </div>
+        
 
-    <div id="last-day"></div>
-
-    <div id="xingchengma" onclick="window.open('xingchengma.html', '_self')"></div>
-    <div id="click" onclick="window.open('hesuan.html', '_self')"></div>
-
-    <!-- <div id="xingcheng">
+     
         <div class="mini-panel-wa">
             <div class="mini-panel-border">
                 <div class="mini-panel-header">
@@ -171,7 +177,7 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
 </body>
 <script type="text/javascript">
     function add_0(num) {
