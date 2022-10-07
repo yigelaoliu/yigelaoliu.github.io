@@ -1,3 +1,4 @@
+@@ -1,206 +1,206 @@
 <!DOCTYPE html>
 <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,13 +11,10 @@
 
         div#bg { /* 背景样式 */
             width: 1080px;  /* 宽 */
-            height: 2595px; /* 高 */
+            height: 2412px; /* 高 */
             background-image: url(bg.jpg);
         }
-    #wrapper{
-        width: 100%;
-        height: 100%;
-    }
+
         div#button {
             padding-top: 110px;
             padding-left: 780px;
@@ -101,62 +99,49 @@
             padding-left: 134px;
         }
 
-        div#xingchengma {
-            float: left;
-            /* background: #f00; */
-            opacity: 0.2;
-            width: 500px;
-            height: 300px;
-            margin-top: 350px;
-            margin-left: 0px;       
-        }
-
         div#click {
             float: left;
             /* background: #f00; */
             opacity: 0.2;
-            width: 500px;
-            height: 300px;
-            margin-top: 300px;
-            margin-left: 600px;
+            width: 300px;
+            height: 200px;
+            margin-top: 500px;
+            margin-left: 200px;
         }
 
-        /* div#xingcheng {
+        div#xingcheng {
             visibility: hidden;
             float: left;
             /* background: #0f0; */
-            /* opacity: 0.2;
+            opacity: 0.2;
             width: 300px;
             height: 200px;
-        } */ 
+        }
     </style>
 </head>
 <body>
 <div id="bg">
-    </div id="wrapper">
-        <div id="button">
-             <img src="button.png">
-        </div>
+    <div id="button">
+        <img src="button.png">
+    </div>
     <div class="notice-box">
 
         <p class="notice-animate">
             河北省政务服务管理办公室：办理政务服务业务请登录河北政务服务网(http://www.hbzwfw.gov.cn/)或“冀时办”APP，我们将为您提供不见面审批服务。近14日内涉疫风险群众须在河北健康码“涉疫风险自报”模块自主报告涉疫风险地区旅居情况，瞒报不报者，造成疫情传播后果的，追究法律责任！
         </p>
-
+    
     </div>
-        <div id="now"></div>
-        <div id="rotate">
-                <img src="circle.png">
-        </div>
-
-         <div id="last-day"></div>
-
-        <div id="xingchengma" onclick="window.open('xingchengma.html', '_self')"></div>
-        <div id="click" onclick="window.open('hesuan.html', '_self')"></div>
+    <div id="now"></div>
+    <div id="rotate">
+        <img src="circle.png">
     </div>
-        
 
-     
+    <div id="last-day"></div>
+
+    <div id="click"></div>
+
+    <div id="xingcheng">
+        <!--添加界面-->
         <div class="mini-panel-wa">
             <div class="mini-panel-border">
                 <div class="mini-panel-header">
@@ -177,7 +162,7 @@
                 </div>
             </div>
         </div>
-    </div>
+</div>
 </body>
 <script type="text/javascript">
     function add_0(num) {
@@ -199,9 +184,24 @@
     function last_day() {
         var time = new Date();
         time.setDate(time.getDate()-2);
-        var last_day_str = time.getFullYear()+"-"+add_0(time.getMonth()+1)+"-"+add_0(time.getDate())+" "+"23:45:26";
+        var last_day_str = time.getFullYear()+"-"+add_0(time.getMonth()+1)+"-"+add_0(time.getDate())+" "+"21:45:26";
         document.getElementById("last-day").innerText = last_day_str;
     }
     last_day();
+</script>
+<script type="text/javascript">
+    var show = 0;
+    var click = document.getElementById("click");
+    var xingcheng = document.getElementById("xingcheng");
+
+    click.onclick = function() {
+        if(show == 0) {
+            xingcheng.style.visibility = "visible";
+            show = 1;
+        } else {
+            xingcheng.style.visibility = "hidden";
+            show = 0;
+        }  
+    };
 </script>
 </html>
