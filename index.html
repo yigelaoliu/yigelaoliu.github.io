@@ -104,8 +104,8 @@
             opacity: 0.2;
             width: 300px;
             height: 200px;
-            margin-top: 500px;
-            margin-left: 200px;
+            margin-top: 400px;
+            margin-left: 100px;
         }
 
         div#xingcheng {
@@ -145,8 +145,8 @@
             <div class="mini-panel-border">
                 <div class="mini-panel-header">
                     <div class="mini-panel-header-inner">
-                        <div class="mini-panel-title">通行行程卡</div>
-                        <div class="mini-tools"></div>
+                        <!-- <div class="mini-panel-title">通行行程卡</div>
+                        <div class="mini-tools"></div> -->
                     </div>
                 </div>
                 <div class="mini-panel-viewport">
@@ -182,13 +182,13 @@
 <script type="text/javascript">
     function last_day() {
         var time = new Date();
-        time.setDate(time.getDate()-2);
+        time.setDate(time.getDate()-1);
         var last_day_str = time.getFullYear()+"-"+add_0(time.getMonth()+1)+"-"+add_0(time.getDate())+" "+"21:45:26";
         document.getElementById("last-day").innerText = last_day_str;
     }
     last_day();
 </script>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
     var show = 0;
     var click = document.getElementById("click");
     var xingcheng = document.getElementById("xingcheng");
@@ -201,6 +201,13 @@
             xingcheng.style.visibility = "hidden";
             show = 0;
         }  
+    };
+</script> -->
+<script type="text/javascript">
+    var click = document.getElementById("click");
+
+    click.onclick = function() {
+        location.href = 'xingchengma.html';
     };
 </script>
 </html>
